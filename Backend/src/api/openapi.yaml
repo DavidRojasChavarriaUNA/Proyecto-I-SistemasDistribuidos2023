@@ -1,0 +1,440 @@
+openapi: 3.0.0
+info:
+  title: "Películas, compositores y álbumes API"
+  description: "Este servicio web provee información de películas, compositores y\
+    \ albumes"
+  version: 1.0.0
+servers:
+- url: http://localhost:8086/
+  description: Servicio web publicado en localhost en el puerto 8086
+tags:
+- name: Peliculas
+  description: Api para películas
+- name: Compositores
+  description: Api para compositores
+- name: Albumes
+  description: Api para álbumes
+paths:
+  /peliculas:
+    get:
+      tags:
+      - Peliculas
+      summary: Retorna todas las peliculas.
+      operationId: moviesGetAll
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Movie'
+                x-content-type: application/json
+      x-swagger-router-controller: Peliculas
+    post:
+      tags:
+      - Peliculas
+      summary: Crea una nueva película.
+      operationId: moviePOST
+      requestBody:
+        description: Datos película
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Movie'
+        required: true
+      responses:
+        "200":
+          description: OK
+      x-swagger-router-controller: Peliculas
+  /peliculas/{peliculaId}:
+    get:
+      tags:
+      - Peliculas
+      summary: Retorna una pelicula por Id.
+      operationId: movieGetById
+      parameters:
+      - name: peliculaId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Movie'
+      x-swagger-router-controller: Peliculas
+    put:
+      tags:
+      - Peliculas
+      summary: Actualiza la información de una película.
+      operationId: moviePutById
+      parameters:
+      - name: peliculaId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: Datos película
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Movie'
+        required: true
+      responses:
+        "200":
+          description: OK
+      x-swagger-router-controller: Peliculas
+    delete:
+      tags:
+      - Peliculas
+      summary: Elimina una película por id.
+      operationId: movieDeleteById
+      parameters:
+      - name: peliculaId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+      x-swagger-router-controller: Peliculas
+  /compositores:
+    get:
+      tags:
+      - Compositores
+      summary: Retorna todos los compositores.
+      operationId: composersGetAll
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Composer'
+                x-content-type: application/json
+      x-swagger-router-controller: Compositores
+    post:
+      tags:
+      - Compositores
+      summary: Crea un nuevo compositor.
+      operationId: composerPOST
+      requestBody:
+        description: Datos compositor
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Composer'
+        required: true
+      responses:
+        "200":
+          description: OK
+      x-swagger-router-controller: Compositores
+  /compositores/{compositorId}:
+    get:
+      tags:
+      - Compositores
+      summary: Retorna un compositor por Id.
+      operationId: composerGetById
+      parameters:
+      - name: compositorId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Composer'
+      x-swagger-router-controller: Compositores
+    put:
+      tags:
+      - Compositores
+      summary: Actualiza la información de un compositor.
+      operationId: composerPutById
+      parameters:
+      - name: compositorId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        description: Datos compositor
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Composer'
+        required: true
+      responses:
+        "200":
+          description: OK
+      x-swagger-router-controller: Compositores
+    delete:
+      tags:
+      - Compositores
+      summary: Elimina un compositor por id.
+      operationId: composerDeleteById
+      parameters:
+      - name: compositorId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: OK
+      x-swagger-router-controller: Compositores
+  /albumes:
+    get:
+      tags:
+      - Albumes
+      summary: Retorna todos los álbumes.
+      operationId: albumGetAll
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Album'
+                x-content-type: application/json
+      x-swagger-router-controller: Albumes
+    post:
+      tags:
+      - Albumes
+      summary: Crea un nuevo álbum.
+      operationId: albumPOST
+      requestBody:
+        description: Datos álbume
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Album'
+        required: true
+      responses:
+        "200":
+          description: OK
+      x-swagger-router-controller: Albumes
+  /albumes/{albumId}:
+    get:
+      tags:
+      - Albumes
+      summary: Retorna un álbum por Id.
+      operationId: albumGetById
+      parameters:
+      - name: albumId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Album'
+      x-swagger-router-controller: Albumes
+    put:
+      tags:
+      - Albumes
+      summary: Actualiza la información de un compositor.
+      operationId: albumPutById
+      parameters:
+      - name: albumId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      requestBody:
+        description: Datos álbum
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Album'
+        required: true
+      responses:
+        "200":
+          description: OK
+      x-swagger-router-controller: Albumes
+    delete:
+      tags:
+      - Albumes
+      summary: Elimina un álbum por id.
+      operationId: albumDeleteById
+      parameters:
+      - name: albumId
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: OK
+      x-swagger-router-controller: Albumes
+components:
+  schemas:
+    ComposerSummary:
+      type: object
+      properties:
+        id:
+          type: integer
+        nombre:
+          type: string
+      example:
+        id: 1
+        nombre: Ennio Morricone
+    AlbumSummary:
+      type: object
+      properties:
+        id:
+          type: integer
+        nombre:
+          type: string
+      example:
+        id: 1
+        nombre: El Bueno el Feo y el Malo (Banda Sonora Original)
+    MovieSummary:
+      type: object
+      properties:
+        id:
+          type: integer
+        nombre:
+          type: string
+      example:
+        id: 1
+        nombre: El bueno el malo y el feo
+    Movie:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        image:
+          type: string
+        Sinopsis:
+          type: string
+        compositores:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComposerSummary'
+        album:
+          $ref: '#/components/schemas/AlbumSummary'
+        trailer:
+          type: string
+        textoMarkDown:
+          type: string
+      example:
+        id: 1
+        title: El bueno el malo y el feo
+        Sinopsis: Durante la guerra civil norteamericana (1861-1865)....
+        compositores:
+        - id: 1
+          nombre: Ennio Morricone
+        album:
+          id: 1
+          nombre: El Bueno el Feo y el Malo (Banda Sonora Original)
+        trailer: https://www.youtube.com/embed/exJOy6uTkek
+        textoMarkDown: '# Texto en markdown...'
+    Composer:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        image:
+          type: string
+        Resumen:
+          type: string
+        peliculas:
+          type: array
+          items:
+            $ref: '#/components/schemas/MovieSummary'
+        albumes:
+          type: array
+          items:
+            $ref: '#/components/schemas/AlbumSummary'
+        textoMarkDown:
+          type: string
+      example:
+        id: 1
+        title: Ennio Morricone
+        Resumen: Fue un compositor y director de orquesta italiano
+        peliculas:
+        - id: 1
+          nombre: El bueno el malo y el feo
+        - id: 2
+          nombre: Por un puñado de dolares
+        albumes:
+        - id: 1
+          nombre: El Bueno el Feo y el Malo (Banda Sonora Original)
+        - id: 2
+          nombre: "Por un puñado de dólares (Banda sonora de la película) [Remasterizado]"
+        textoMarkDown: '# Texto en markdown...'
+    Album:
+      type: object
+      properties:
+        id:
+          type: integer
+        title:
+          type: string
+        image:
+          type: string
+        pelicula:
+          $ref: '#/components/schemas/MovieSummary'
+        compositores:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComposerSummary'
+        discografica:
+          type: string
+        duracion:
+          type: string
+        textoMarkDown:
+          type: string
+      example:
+        id: 1
+        title: El Bueno el Feo y el Malo (Banda Sonora Original)
+        image: /images/albumes/album_01/VistaPrevia.jfif
+        pelicula:
+          id: 1
+          nombre: El bueno el malo y el feo
+        compositores:
+        - id: 1
+          nombre: Ennio Morricone
+        discografica: EMI America Capitol Records
+        duracion: 53:03
+        textoMarkDown: '# Texto en markdown'

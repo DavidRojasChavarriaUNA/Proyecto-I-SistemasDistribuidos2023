@@ -1,0 +1,26 @@
+{
+    "name": "proyecto_01_sistemas_sistribuidos_back_end",
+    "version": "1.0.0",
+    "description": "Proyecto I Back end, sistemas distribuidos 2023 - UNA",
+    "author": "David Rojas Chavarria",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "nodemon src/index.js"
+    },
+    "keywords": [
+        "swagger"
+    ],
+    "license": "Unlicense",
+    "devDependencies": {
+        "connect": "^3.2.0",
+        "js-yaml": "^3.3.0",
+        "nodemon": "^2.0.12",
+        "cors": "^2.8.5",
+        "oas3-tools-cors": "^2.3.5"
+    },
+    "engines": {
+        "node": "14.x"
+    },
+    "dependencies": {
+    }
+}
