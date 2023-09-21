@@ -2,7 +2,7 @@
 ## Escuela de Informática 
 ### Sistemas Distribuidos.
 
-#### Proyecto I.
+#### Proyecto I - back end.
 
 Estudiante: 
 David Rojas Chavarría
@@ -13,34 +13,23 @@ Armando Arce Orozco.
 
 Ciclo II 2023
 
-Repositorio
-    url github
-Sitio web
-Podrá acceder al sitio web del proyecto I en la siguiente dirección web:
-    url sitio
+Repositorio \
+    https://github.com/DavidRojasChavarriaUNA/Proyecto-I-SistemasDistribuidos2023 \
+	carpeta Backend \
+	https://github.com/DavidRojasChavarriaUNA/Proyecto-I-SistemasDistribuidos2023/tree/main/Backend
 
-Para desarrollo
+Para ejecutar el proyecto deberá ejecutar los siguientes pasos:
 
-	Paso 1.
-	ingresar al archivo .env y dejar la variable de entorno con la url del server de desarrollo
-	VITE_BASE_URL=UrlDelServidor
-	ejemplo
-	VITE_BASE_URL=http://localhost:8089/server
+1. ingresar a la consola o terminal y ubicarse en la carpeta del backend \
+	ejemplo (en windows)\
+		 'cd "C:\Users\drojas\Desktop\Licenciatura UNA\Ciclo II 2023\Sistemas Distribuidos\Sesión 6\Proyecto-I-SistemasDistribuidos2023\Backend"'
+	
+2. instalar los paquetes de node.js en caso que no los haya instalado. \
+	"npm install"
 
-	Paso 2.
-	Ejecutar el comando npm run dev
+3. para ejecutar el backend, puede hacerlo mediante el comando
+	"npm run start" \
+	una vez inicializado, el sitio se levanta en la url local "http://localhost:8086", en el puerto 8086 \
+	y la documentación del servicio de swagger en la url "http://localhost:8086/docs" \
 
-Para generar publicado
-
-	Paso 1.
-	ingresar al archivo .env y dejar la variable de entorno 
-	VITE_BASE_URL=/server
-
-	Paso 2.
-	Ejecutar el comando npm run build
-
-	Paso 3.
-	Publicar el contenido de la carpeta dist en el servidor
-
-	Paso 4.
-	publicar la carpeta server en el servidor
+	también puede ejecutar el servicio con el comando node ."\src\index.js"
