@@ -18,9 +18,9 @@ Primer proyecto, servicio restfull con Node.js utilizando el api de swagger, y f
 Repositorio \
     https://github.com/DavidRojasChavarriaUNA/Proyecto-I-SistemasDistribuidos2023 \
 	carpeta Backend \
-	https://github.com/DavidRojasChavarriaUNA/Proyecto-I-SistemasDistribuidos2023/tree/main/Backend
+	https://github.com/DavidRojasChavarriaUNA/Proyecto-I-SistemasDistribuidos2023/tree/main/Backend \
 	carpeta Frontend \
-	https://github.com/DavidRojasChavarriaUNA/Proyecto-I-SistemasDistribuidos2023/tree/main/Frontend
+	https://github.com/DavidRojasChavarriaUNA/Proyecto-I-SistemasDistribuidos2023/tree/main/Frontend \
 
 En el proyecto Backend, ubicado en la carpeta "Backend" encontrará las indicaciones para levantar dicho proyecto
 
