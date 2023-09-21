@@ -24,4 +24,4 @@ Repositorio \
 
 En el proyecto Backend, ubicado en la carpeta "Backend" encontrará las indicaciones para levantar dicho proyecto
 
-En el proyecto Fackend, ubicado en la carpeta "Frontend" encontrará las indicaciones para levantar dicho proyecto
+En el proyecto Frontend, ubicado en la carpeta "Frontend" encontrará las indicaciones para levantar dicho proyecto
